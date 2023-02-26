@@ -26,10 +26,11 @@ export default function App() {
       <div className="row">
         <div className="col-md-6">
           <h4>My IP Address: {data.ip}</h4> <hr />
-          <h4>Continent: {data.continentName}</h4> <hr />
+          <h4>Region Name: {data.regionName}</h4> <hr />
           <h4>Country: {data.countryName}</h4> <hr />
+          <h4> Country Capital: {data.capital}</h4> <hr/>
+          <h4>Continent: {data.continentName}</h4> <hr />
           <h4>Official Country Name: {data.officialCountryName}</h4> <hr />
-          <h4>Country Capital: {data.regionName}</h4> <hr />
         </div>
         <div className="col-md-6 bg-primary">
           <h4>Country Phone Code: +{data.phoneCode}</h4> <hr />
@@ -51,7 +52,12 @@ export default function App() {
             Tinsaye Simeneh
           </a>{" "}
           By using
-          <a href="https://apiip.net/" target="_blank" rel="noreferrer" className="text-white">
+          <a
+            href="https://apiip.net/"
+            target="_blank"
+            rel="noreferrer"
+            className="text-white"
+          >
             {" "}
             apip API
           </a>
