@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import { Container } from "react-bootstrap";
 
 export default function App() {
   const [data, setData] = useState({});
@@ -17,32 +18,26 @@ export default function App() {
   }, []);
 
   return (
-    <>
-      <div>
-        <h1>IP Address</h1>
-        <p>{data.ip}</p>
-        <h1>Continent</h1>
-        <p>{data.continentName}</p>
-        <h1>Country Code</h1>
-        <p>{data.countryCode}</p>
-        <h1>official Country Name</h1>
-        <p>{data.officialCountryName}</p>
-        <h1>Country Capital</h1>
-        <p>{data.regionName}</p>
-        <h1>Country Phone Code</h1>
-        <p>{data.phoneCode}</p>
-        <h1>Country</h1>
-        <p>{data.countryName}</p>
-        <h1>Latitude</h1>
-        <p>{data.latitude}</p>
-        <h1>Longitude</h1>
-        <p>{data.longitude}</p>
-        <h1>Country Flag</h1>
-        <img
-          alt={data.countryName}
-          src={`https://www.countryflags.io/${data.countryCode}/flat/64.png`}
-        />
+    <Container className="p-3 bg-primary border rounded mt-5 text-white">
+      <div className="col-md-12 text-center mb-5 bg-danger">
+        <h1>IP Address Tracker</h1>
       </div>
-    </>
+
+      <div className="row">
+        <div className="col-md-6">
+          <h4>My IP Address: {data.ip}</h4> <hr />
+          <h4>Continent: {data.continentName}</h4> <hr />
+          <h4>Country: {data.countryName}</h4> <hr />
+          <h4>Official Country Name: {data.officialCountryName}</h4> <hr />
+          <h4>Country Capital: {data.regionName}</h4> <hr />
+        </div>
+        <div className="col-md-6 bg-primary">
+          <h4>Country Phone Code: +{data.phoneCode}</h4> <hr />
+          <h4>Country Code: {data.countryCode}</h4> <hr />
+          <h4>Latitude: {data.latitude}</h4> <hr />
+          <h4>Longitude: {data.longitude}</h4> <hr />
+        </div>
+      </div>
+    </Container>
   );
 }
