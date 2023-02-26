@@ -10,14 +10,15 @@ export default function App() {
         "http://apiip.net/api/check?accessKey=f7af0b2a-efb5-4aa2-a541-c8432c6356ef"
       )
       .then((response) => {
-         setData(response.data)
-         console.log(response.data)
-         })
+        setData(response.data);
+        console.log(response.data);
+      })
       .catch((err) => console.log(err));
   }, []);
 
-  return( 
-  <div>
+  return (
+    <>
+      <div>
         <h1>IP Address</h1>
         <p>{data.ip}</p>
         <h1>Continent</h1>
@@ -36,6 +37,12 @@ export default function App() {
         <p>{data.latitude}</p>
         <h1>Longitude</h1>
         <p>{data.longitude}</p>
-    </div>    
-  )
+        <h1>Country Flag</h1>
+        <img
+          alt={data.countryName}
+          src={`https://www.countryflags.io/${data.countryCode}/flat/64.png`}
+        />
+      </div>
+    </>
+  );
 }
