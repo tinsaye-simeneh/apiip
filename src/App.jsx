@@ -36,6 +36,25 @@ export default function App() {
           <h4>Country Code: {data.countryCode}</h4> <hr />
           <h4>Latitude: {data.latitude}</h4> <hr />
           <h4>Longitude: {data.longitude}</h4> <hr />
+          <h4>Postal Code: {data.postalCode}</h4> <hr />
+        </div>
+      </div>
+      <div className="row mt-5 text-center">
+        <div className="col-md-12">
+          Developed By{" "}
+          <a
+            href="https://github.com/tinsaye-simeneh"
+            className="text-white"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Tinsaye Simeneh
+          </a>{" "}
+          By using
+          <a href="https://apiip.net/" target="_blank" rel="noreferrer" className="text-white">
+            {" "}
+            apip API
+          </a>
         </div>
       </div>
     </Container>
